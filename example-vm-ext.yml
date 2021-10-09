@@ -1,0 +1,4 @@
+vm_extensions:
+- name: external_rg
+  cloud_properties:
+    resource_group_name: cf-redis-rg
