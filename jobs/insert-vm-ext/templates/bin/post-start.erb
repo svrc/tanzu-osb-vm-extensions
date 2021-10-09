@@ -11,6 +11,6 @@ else
   touch /var/vcap/jobs/insert-vm-ext/INSERTED
 
   # re-run the pre-start for bosh-update-config
-  monit restart broker
+  /var/vcap/bosh/bin/monit restart broker
 fi
 
