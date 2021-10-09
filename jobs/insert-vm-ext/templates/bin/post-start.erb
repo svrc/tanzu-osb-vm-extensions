@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ -f /var/vcap/jobs/insert-vm-ext/INSERTED ];
+then
+  echo "already updated, skipping"
+else
+  echo "adding properties to broker config"
+
+  sed -i 's/^\([[:space:]]*vm_extensions:\).*$/\1 \[ <%= p("vm_extensions").join "," %> \]/' /var/vcap/jobs/broker/config/broker.yml
+
+  touch /var/vcap/jobs/insert-vm-ext/INSERTED
+
+  # re-run the pre-start for bosh-update-config
+  monit restart broker
+fi
+

@@ -1,0 +1,20 @@
+---
+name: redis-props
+
+releases:
+- name: tanzu-osb-vm-extensions
+  version: 0+dev.1
+
+addons:
+  - name: insert-vm-ext
+    jobs:
+    - name: insert-vm-ext
+      release: tanzu-osb-vm-extensions
+      properties:
+        vm_extensions: [ external_rg ]
+    include: 
+      jobs:
+      - name: broker
+        release: on-demand-service-broker
+      deployments: 
+      - p-redis-6b455abbc5286e0f3c07

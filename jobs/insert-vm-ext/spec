@@ -1,0 +1,13 @@
+---
+name: insert-vm-ext
+
+templates:
+  bin/post-start.erb: bin/post-start
+
+packages: []
+
+properties:
+  vm_extensions:
+    description: array of vm extensions to be added to this tile
+    default: []
+
