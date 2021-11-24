@@ -32,4 +32,4 @@ bosh -n update-config --name=insert-vm-ext --type=runtime ./addon.yml
 ```
 6. "Apply Changes" in Ops Manager to apply the addon to your tiles.
 
-7. Warning:  Existing on-demand instances will need to be manually updated at the BOSH level, i.e. you'll need to add the vm extensions to them manually.  This MUST be done prior to attempting ugprades/updates as the OSB won't like that its "current state" BOSH manifest doesn't match the "actual state" manifest.
+7. Warning:  Existing on-demand instances will need to be manually updated at the BOSH level, i.e. you'll need to add the vm extensions to them manually.  This MUST be done prior to attempting ugprades/updates as the OSB won't like that its "current state" BOSH manifest doesn't match the "actual state" manifest.   But the bright side is, these changes will survive upgrades!
